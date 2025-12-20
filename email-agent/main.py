@@ -24,17 +24,11 @@ IMAP_FOLDER = "INBOX"
 
 CHAT_MODEL = "qwen3:8b"
 
-
-print("[DEBUG] Loaded .env values:")
-print(f"  IMAP_HOST={IMAP_HOST}")
-print(f"  IMAP_USER={IMAP_USER}")
-print(f"  IMAP_PASSWORD length={len(IMAP_PASSWORD) if IMAP_PASSWORD else 0}")
-print("")
-
-
 # -----------------------------------------------------------
 # Define the message state structure used by LangGraph
 # -----------------------------------------------------------
+
+
 class ChatState(TypedDict):
     messages: list
 
@@ -57,11 +51,13 @@ def connect():
         print(f"[DEBUG] IMAP_PASSWORD length: {len(IMAP_PASSWORD)} (masked)")
     else:
         print("[DEBUG] ERROR: IMAP_PASSWORD is EMPTY or NOT LOADED.")
-        raise ValueError("IMAP_PASSWORD is empty. Did you load your .env correctly?")
+        raise ValueError(
+            "IMAP_PASSWORD is empty. Did you load your .env correctly?")
 
     # Quick validation before login
     if not IMAP_HOST or not IMAP_USER or not IMAP_PASSWORD:
-        raise ValueError("[DEBUG] One or more IMAP environment variables are missing.")
+        raise ValueError(
+            "[DEBUG] One or more IMAP environment variables are missing.")
 
     try:
         mailbox = MailBox(IMAP_HOST)
