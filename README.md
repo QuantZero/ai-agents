@@ -1,8 +1,8 @@
-A collection of small, focused AI agents built with Python. Each agent is designed to solve a specific task using modern AI/LLM technologies.
-
 ## Overview
 
-This repository contains independent AI agent projects, each with its own purpose and dependencies. All agents are designed to be simple, focused, and easy to use.
+This repository contains independent AI agent projects, each with its own purpose and dependencies. All agents are designed to be simple, focused, and easy to use. It is basically a collection of small, focused AI agents built with Python. Each agent is designed to solve a specific task using modern AI/LLM technologies. 
+
+> Multi agent flows will be added soon
 
 ## Available Agents
 
