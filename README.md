@@ -1,5 +1,3 @@
-# AI Projects
-
 A collection of small, focused AI agents built with Python. Each agent is designed to solve a specific task using modern AI/LLM technologies.
 
 ## Overview
