@@ -49,6 +49,8 @@ A Python CLI tool that scrapes websites and uses OpenAI's GPT-4o-mini to generat
 
 ## Usage
 
+### Option 1: OpenAI (main.py)
+
 Run the script:
 ```bash
 python main.py
@@ -69,6 +71,36 @@ The script will:
 2. Fetch and scrape the website content
 3. Send it to OpenAI for analysis
 4. Display a formatted summary
+
+### Option 2: Ollama (local_llm_main.py) - FREE!
+
+Use this for completely free, offline processing with Ollama's local LLM models.
+
+**Prerequisites:**
+1. Install and run [Ollama](https://ollama.ai)
+2. Make sure Ollama is running on `http://localhost:11434`
+3. Pull the llama3.2 model (or use any other Ollama model):
+   ```bash
+   ollama pull llama3.2
+   ```
+
+**Run the local LLM version:**
+```bash
+uv run local_llm_main.py
+```
+
+When prompted, enter a website URL:
+```
+Enter a website URL: github.com
+```
+
+The script will use your local Ollama model for completely free processing with no API costs!
+
+**Benefits:**
+- ✅ Completely FREE (no API costs)
+- ✅ Offline (no data sent to external services)
+- ✅ Fast (runs locally on your machine)
+- ✅ Same intelligent summaries as OpenAI version
 
 ### Supported URL Formats
 
