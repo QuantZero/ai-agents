@@ -1,0 +1,12 @@
+[project]
+name = "mvp-mobile-agent"
+version = "0.1.0"
+description = "Mobile app MVP planning and technical requirements agent that outputs a builder prompt"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-openai>=0.2.0",
+    "python-dotenv>=1.2.1",
+]
+
+
