@@ -10,7 +10,11 @@ This agent:
 - **Outputs one thing only** at the end: a **complete, self-contained prompt string** that you can
   pass directly to a separate *builder agent* (e.g., another script or external LLM).
 
-The planner is CLI-first, built with `langchain-openai` and the OpenAI API.
+The planner is available in two modes:
+- **Web UI** (recommended): Interactive chat-based interface built with Streamlit
+- **CLI**: Command-line interface for terminal-based workflows
+
+Built with `langchain-openai` and the OpenAI API.
 
 ## Requirements
 
@@ -44,6 +48,43 @@ OPENAI_MODEL=gpt-4o-mini
 - `OPENAI_MODEL` is optional; defaults to `gpt-4o-mini` if not set.
 
 ## Run
+
+### Web UI (Recommended)
+
+Launch the interactive web interface:
+
+```bash
+uv run streamlit run ui.py
+```
+
+Or if you're using pip/venv:
+
+```bash
+streamlit run ui.py
+```
+
+This will open your browser to `http://localhost:8501` with a chat-based interface where you can:
+- Enter your app idea
+- View and answer clarifying questions
+- Review the generated requirements spec
+- Get the final builder prompt with download option
+
+The UI provides:
+- 📱 **Chat-style interface** for natural conversation flow
+- 📊 **Progress tracking** in the sidebar
+- 💬 **Conversation history** to review previous steps
+- 📥 **Download button** for the builder prompt
+- 🔄 **Easy navigation** between steps
+
+### CLI Mode
+
+Run the command-line interface:
+
+```bash
+uv run python main.py
+```
+
+Or if you're using pip/venv:
 
 ```bash
 python main.py
@@ -89,6 +130,7 @@ You can copy that final prompt and feed it directly into your own *MVP builder* 
 ```text
 mvp-mobile-agent/
 ├── main.py         # Single-purpose planner CLI that outputs a builder prompt
+├── ui.py           # Streamlit web UI for interactive planning
 ├── pyproject.toml  # Dependencies
 ├── README.md       # This file
 └── .env            # OpenAI config (gitignored)

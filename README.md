@@ -6,6 +6,35 @@ This repository contains independent AI agent projects, each with its own purpos
 
 ## Available Agents
 
+### 🚀 MVP Planner Agent
+
+A planning agent that helps refine mobile app MVP ideas into clear, technical, builder-ready specifications. Generates a comprehensive builder prompt for the MVP Builder Agent.
+
+**Features:**
+- Asks focused clarifying questions
+- Generates structured MVP + technical requirements spec
+- Outputs builder-ready prompt
+- Interactive web UI and CLI
+
+**Tech Stack:** LangChain, OpenAI API, Streamlit
+
+[📖 Read the MVP Planner Agent README](./mvp-planner-agent/README.md)
+
+### 🔨 MVP Builder Agent
+
+An AI-powered builder that takes builder prompts and generates complete, working prototypes with modern tech stacks, best practices, and production-ready code.
+
+**Features:**
+- Step-by-step building process
+- Uses GPT-4o for high-quality code generation
+- Generates architecture and implementation plans
+- Creates complete project structures
+- Auto-generates documentation
+
+**Tech Stack:** LangChain, OpenAI API, Streamlit
+
+[📖 Read the MVP Builder Agent README](./mvp-builder-agent/README.md)
+
 ### 📧 Email Agent
 
 A local LLM agent that connects to your IMAP inbox, lists unread emails, and provides intelligent summaries. Built with LangGraph and LangChain, running against a local Ollama model.
@@ -43,6 +72,8 @@ Each agent is independent and can be set up separately. Navigate to the agent's 
 - **Python 3.12+** (Python 3.13+ for email-agent)
 - **uv** package manager (recommended) or pip
 - Agent-specific requirements:
+  - **MVP Planner Agent**: OpenAI API key
+  - **MVP Builder Agent**: OpenAI API key (GPT-4o recommended)
   - **Email Agent**: Ollama running locally with a compatible model
   - **Scraper Agent**: OpenAI API key
 
@@ -55,7 +86,7 @@ Each agent is independent and can be set up separately. Navigate to the agent's 
 
 2. **Choose an agent and navigate to its directory:**
    ```bash
-   cd email-agent    # or scraper-agent
+   cd mvp-planner-agent    # or mvp-builder-agent, email-agent, scraper-agent
    ```
 
 3. **Install dependencies:**
@@ -79,10 +110,24 @@ Each agent is independent and can be set up separately. Navigate to the agent's 
 ## Project Structure
 
 ```
-ai-projects/
+ai-agents/
+├── mvp-planner-agent/    # MVP planning agent
+│   ├── main.py           # Main entry point
+│   ├── ui.py             # Streamlit web UI
+│   ├── pyproject.toml    # Dependencies
+│   ├── README.md         # Detailed documentation
+│   └── .env              # Configuration (gitignored)
+│
+├── mvp-builder-agent/    # MVP builder agent
+│   ├── main.py           # Main entry point
+│   ├── ui.py             # Streamlit web UI
+│   ├── pyproject.toml    # Dependencies
+│   ├── README.md         # Detailed documentation
+│   └── .env              # Configuration (gitignored)
+│
 ├── email-agent/          # Email management agent
 │   ├── main.py           # Main entry point
-│   ├── pyproject.toml    # Dependencies
+│   ├── pyproject.toml   # Dependencies
 │   ├── README.md         # Detailed documentation
 │   └── .env              # Configuration (gitignored)
 │

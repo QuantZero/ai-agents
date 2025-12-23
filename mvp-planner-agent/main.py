@@ -9,13 +9,20 @@ load_dotenv(override=True)
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
-if not OPENAI_API_KEY:
-    raise RuntimeError(
-        "OPENAI_API_KEY is not set. Add it to a .env file in mvp-mobile-agent/."
-    )
+# Initialize llm lazily to allow imports even if API key isn't set yet
+llm = None
 
 
-llm = ChatOpenAI(model=OPENAI_MODEL, temperature=0.2)
+def get_llm():
+    """Get or initialize the LLM instance"""
+    global llm
+    if llm is None:
+        if not OPENAI_API_KEY:
+            raise RuntimeError(
+                "OPENAI_API_KEY is not set. Add it to a .env file in mvp-planner-agent/."
+            )
+        llm = ChatOpenAI(model=OPENAI_MODEL, temperature=0.2)
+    return llm
 
 
 def generate_clarifying_questions(idea_summary: str) -> str:
@@ -46,7 +53,7 @@ Questions should be:
 
 Only output the questions, numbered on separate lines.
 """
-    return llm.invoke(prompt).content  # type: ignore[return-value]
+    return get_llm().invoke(prompt).content  # type: ignore[return-value]
 
 
 def generate_requirements_spec(idea_summary: str, answers: str) -> str:
@@ -107,7 +114,7 @@ Include sections:
 Keep it concrete and opinionated enough that a builder agent can design a real architecture,
 but do NOT drift into implementation details or code.
 """
-    return llm.invoke(prompt).content  # type: ignore[return-value]
+    return get_llm().invoke(prompt).content  # type: ignore[return-value]
 
 
 def generate_builder_prompt(requirements_spec: str) -> str:
@@ -152,10 +159,16 @@ IMPORTANT:
 - Do NOT add any explanations or commentary outside of that prompt.
 """
     # The model returns the builder prompt as plain text; we just pass it through.
-    return llm.invoke(prompt).content  # type: ignore[return-value]
+    return get_llm().invoke(prompt).content  # type: ignore[return-value]
 
 
 def main() -> None:
+    # Check API key when running CLI
+    if not OPENAI_API_KEY:
+        raise RuntimeError(
+            "OPENAI_API_KEY is not set. Add it to a .env file in mvp-planner-agent/."
+        )
+    
     print("\n=== Mobile MVP Planner (Prompt-First) ===")
     print("This agent will help you refine an app idea and output a single builder prompt.\n")
 
