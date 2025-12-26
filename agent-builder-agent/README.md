@@ -71,15 +71,26 @@ Create a `.env` file in the `agent-builder-agent` directory:
 # Required
 OPENAI_API_KEY=your_openai_api_key_here
 
+# Email Configuration (Required for email sending)
+SMTP_USER=your_email@gmail.com
+SMTP_PASSWORD=your_gmail_app_password
+
 # Optional
 OPENAI_MODEL=gpt-4o  # Default: gpt-4o
 DAILY_RUN_TIME=09:00  # Default: 09:00 (24-hour format)
 GITHUB_REPO_URL=https://github.com/user/repo  # For email links
+SMTP_SERVER=smtp.gmail.com  # Default: smtp.gmail.com
+SMTP_PORT=587  # Default: 587
 ```
 
 **Note**: All email reports are automatically sent to `jamesdev0101@gmail.com` (hardcoded). This includes:
 - Success reports (what was created, why, and how)
 - Error reports (what failed, why, and how to fix)
+
+**Gmail Setup**: To send emails via Gmail, you need to:
+1. Enable 2-factor authentication on your Google account
+2. Generate an App Password: https://myaccount.google.com/apppasswords
+3. Use the app password (not your regular password) as `SMTP_PASSWORD`
 
 ## Usage
 
@@ -249,7 +260,12 @@ Ensure `OPENAI_API_KEY` is set in your `.env` file or environment.
 
 ### Email Not Sending
 
-Email sending is optional. If it fails, the email content will be printed to the console. Configure `EMAIL_RECIPIENT` in `.env` if you want email summaries.
+Email sending requires SMTP configuration:
+1. Set `SMTP_USER` to your Gmail address
+2. Set `SMTP_PASSWORD` to a Gmail app password (not your regular password)
+3. Generate app password at: https://myaccount.google.com/apppasswords
+
+If SMTP is not configured, the email content will be printed to the console instead.
 
 ### Agent Generation Fails
 

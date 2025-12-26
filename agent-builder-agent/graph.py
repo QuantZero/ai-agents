@@ -386,14 +386,18 @@ def send_summary_email(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
             email_content = response.content
     
     # Always send email (hardcoded to jamesdev0101@gmail.com)
+    print(f"\n📧 Attempting to send email report...")
     success = send_email(email_content)
     
     if success:
         state["email_sent"] = True
+        print(f"✅ Email sent successfully")
     else:
         # Log but don't fail - email is critical for reporting
         state["email_sent"] = False
-        state["errors"].append("Email sending failed - manual review required")
+        error_msg = "Email sending failed - check SMTP configuration or see console output"
+        state["errors"].append(error_msg)
+        print(f"❌ {error_msg}")
     
     return state
 

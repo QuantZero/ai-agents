@@ -3,6 +3,9 @@
 import os
 import json
 import subprocess
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from pathlib import Path
 from typing import Optional, Dict, Any
 from datetime import datetime
@@ -157,47 +160,98 @@ def git_commit_and_push(repo_root: str, agent_name: str, date: str) -> tuple[boo
 
 
 def send_email(email_content: str, recipient: Optional[str] = None) -> bool:
-    """Send email using system mail command or SMTP.
+    """Send email using SMTP (Gmail by default).
     
     Hardcoded recipient: jamesdev0101@gmail.com
+    
+    Requires SMTP configuration in environment variables:
+    - SMTP_SERVER (default: smtp.gmail.com)
+    - SMTP_PORT (default: 587)
+    - SMTP_USER (Gmail address)
+    - SMTP_PASSWORD (Gmail app password)
     """
     # Hardcoded developer email address
     recipient = recipient or "jamesdev0101@gmail.com"
     
-    try:
-        # Try using system mail command (Unix/Mac)
-        process = subprocess.Popen(
-            ["mail", "-s", email_content.split('\n')[0].replace("Subject: ", ""), recipient],
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True
-        )
-        body = '\n'.join(email_content.split('\n')[1:])
-        stdout, stderr = process.communicate(input=body)
-        
-        if process.returncode == 0:
-            return True
-        else:
-            print(f"Mail command failed: {stderr}")
-            print("\nEmail content (manual send required):")
-            print("\n" + "="*60)
-            print(email_content)
-            print("="*60)
-            return False
+    # Parse email content
+    lines = email_content.split('\n')
+    subject = ""
+    body_lines = []
     
-    except FileNotFoundError:
-        # mail command not available, just print
+    # Extract subject from first line if it starts with "Subject:"
+    if lines and lines[0].startswith("Subject:"):
+        subject = lines[0].replace("Subject:", "").strip()
+        body_lines = lines[1:]
+    else:
+        # Try to find subject in content
+        for i, line in enumerate(lines):
+            if line.startswith("Subject:"):
+                subject = line.replace("Subject:", "").strip()
+                body_lines = lines[i+1:]
+                break
+        if not subject:
+            subject = "Agent Builder Report"
+            body_lines = lines
+    
+    body = '\n'.join(body_lines).strip()
+    
+    # Get SMTP configuration
+    smtp_server = os.getenv("SMTP_SERVER", "smtp.gmail.com")
+    smtp_port = int(os.getenv("SMTP_PORT", "587"))
+    smtp_user = os.getenv("SMTP_USER")
+    smtp_password = os.getenv("SMTP_PASSWORD")
+    
+    # If SMTP not configured, try system mail, then print
+    if not smtp_user or not smtp_password:
+        print("\n⚠️  SMTP not configured. Email will not be sent.")
+        print("To enable email sending, set SMTP_USER and SMTP_PASSWORD in .env")
+        print("\nEmail content:")
+        print("\n" + "="*60)
+        print(f"To: {recipient}")
+        print(f"Subject: {subject}")
+        print("-" * 60)
+        print(body)
+        print("="*60)
+        return False
+    
+    try:
+        # Create message
+        msg = MIMEMultipart()
+        msg['From'] = smtp_user
+        msg['To'] = recipient
+        msg['Subject'] = subject
+        
+        # Add body
+        msg.attach(MIMEText(body, 'plain'))
+        
+        # Send email via SMTP
+        with smtplib.SMTP(smtp_server, smtp_port) as server:
+            server.starttls()  # Enable encryption
+            server.login(smtp_user, smtp_password)
+            server.send_message(msg)
+        
+        print(f"✅ Email sent successfully to {recipient}")
+        return True
+    
+    except smtplib.SMTPAuthenticationError as e:
+        print(f"❌ SMTP authentication failed: {e}")
+        print("Check your SMTP_USER and SMTP_PASSWORD (use Gmail app password)")
         print("\nEmail content (manual send required):")
         print("\n" + "="*60)
-        print(email_content)
+        print(f"To: {recipient}")
+        print(f"Subject: {subject}")
+        print("-" * 60)
+        print(body)
         print("="*60)
         return False
     except Exception as e:
-        print(f"Error sending email: {e}")
+        print(f"❌ Error sending email: {e}")
         print("\nEmail content (manual send required):")
         print("\n" + "="*60)
-        print(email_content)
+        print(f"To: {recipient}")
+        print(f"Subject: {subject}")
+        print("-" * 60)
+        print(body)
         print("="*60)
         return False
 
