@@ -162,16 +162,24 @@ def git_commit_and_push(repo_root: str, agent_name: str, date: str) -> tuple[boo
 def send_email(email_content: str, recipient: Optional[str] = None) -> bool:
     """Send email using SMTP (Gmail by default).
     
-    Hardcoded recipient: jamesdev0101@gmail.com
-    
     Requires SMTP configuration in environment variables:
     - SMTP_SERVER (default: smtp.gmail.com)
     - SMTP_PORT (default: 587)
     - SMTP_USER (Gmail address)
     - SMTP_PASSWORD (Gmail app password)
+    - EMAIL_RECIPIENT (recipient email address - required)
     """
-    # Hardcoded developer email address
-    recipient = recipient or "jamesdev0101@gmail.com"
+    # Get recipient from environment variable
+    recipient = recipient or os.getenv("EMAIL_RECIPIENT")
+    
+    if not recipient:
+        print("\n⚠️  EMAIL_RECIPIENT not configured. Email will not be sent.")
+        print("To enable email sending, set EMAIL_RECIPIENT in .env")
+        print("\nEmail content:")
+        print("\n" + "="*60)
+        print(email_content)
+        print("="*60)
+        return False
     
     # Parse email content
     lines = email_content.split('\n')

@@ -17,6 +17,17 @@ Agents in the [`ai-built-agents`](./ai-built-agents/) directory are automaticall
 
 
 
+
+### Smart Habit Builder
+
+An AI agent that helps people build and sustain healthy habits effortlessly.
+
+**Category:** wellbeing
+
+**Date:** 2025-12-26
+
+[📖 Read the Smart Habit Builder README](./ai-built-agents/2025-12-26-smart-habit-builder/README.md)
+
 ### Daily Focus Enhancer
 
 A personalized agent that helps people maintain focus and productivity by managing distractions and optimizing work schedules.

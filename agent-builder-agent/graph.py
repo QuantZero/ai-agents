@@ -331,7 +331,7 @@ def commit_and_push(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
 def send_summary_email(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
     """Send summary email - success report if no errors, error report if errors exist.
     
-    Always sends an email to jamesdev0101@gmail.com regardless of success or failure.
+    Sends email to the address configured in EMAIL_RECIPIENT environment variable.
     """
     llm = get_llm()
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -423,7 +423,7 @@ def send_summary_email(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
             response = llm.invoke(messages)
             email_content = response.content
     
-    # Always send email (hardcoded to jamesdev0101@gmail.com)
+    # Always send email to configured recipient
     print(f"\n📧 Attempting to send email report...")
     success = send_email(email_content)
     

@@ -33,7 +33,7 @@ The agent uses LangGraph to orchestrate a multi-step workflow:
 3. **File Writing**: Creates agent directory structure and files
 4. **Registry Update**: Updates main README with new agent entry
 5. **Git Commit**: Commits and pushes changes
-6. **Email Report**: Always sends a report (success or error) to jamesdev0101@gmail.com
+6. **Email Report**: Always sends a report (success or error) to configured recipient
 
 **Focus Areas**: The agent prioritizes problems affecting millions of people:
 - Health & wellness, Personal finance, Education & learning
@@ -74,6 +74,7 @@ OPENAI_API_KEY=your_openai_api_key_here
 # Email Configuration (Required for email sending)
 SMTP_USER=your_email@gmail.com
 SMTP_PASSWORD=your_gmail_app_password
+EMAIL_RECIPIENT=your_email@gmail.com  # Where to send reports
 
 # Optional
 OPENAI_MODEL=gpt-4o  # Default: gpt-4o
@@ -83,7 +84,7 @@ SMTP_SERVER=smtp.gmail.com  # Default: smtp.gmail.com
 SMTP_PORT=587  # Default: 587
 ```
 
-**Note**: All email reports are automatically sent to `jamesdev0101@gmail.com` (hardcoded). This includes:
+**Note**: All email reports are sent to the address configured in `EMAIL_RECIPIENT`. This includes:
 - Success reports (what was created, why, and how)
 - Error reports (what failed, why, and how to fix)
 
@@ -91,6 +92,7 @@ SMTP_PORT=587  # Default: 587
 1. Enable 2-factor authentication on your Google account
 2. Generate an App Password: https://myaccount.google.com/apppasswords
 3. Use the app password (not your regular password) as `SMTP_PASSWORD`
+4. Set `EMAIL_RECIPIENT` to the address where you want to receive reports
 
 ## Usage
 
@@ -215,7 +217,7 @@ The agent tracks errors at each step and always sends an email report:
   - Why it failed (detailed error explanation)
   - How to fix it (suggested solutions)
 
-All reports are sent to `jamesdev0101@gmail.com` (hardcoded). The workflow always completes the email step, even if earlier steps failed.
+All reports are sent to the address configured in `EMAIL_RECIPIENT` environment variable. The workflow always completes the email step, even if earlier steps failed.
 
 ## Example Output
 
