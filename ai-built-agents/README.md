@@ -6,6 +6,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Daily Stress Manager
+
+An AI agent that helps individuals identify stress triggers and suggests personalized strategies to manage stress effectively.
+
+**Category:** wellbeing
+
+**Date:** 2025-12-26
+
+[📖 Read the Daily Stress Manager README](./2025-12-26-daily-stress-manager/README.md)
+
 ### Smart Budget Buddy
 
 An intelligent budgeting assistant that helps individuals manage their personal finances effortlessly.
