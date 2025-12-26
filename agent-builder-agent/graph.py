@@ -191,26 +191,25 @@ def write_files(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
 
 
 def update_registry(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
-    """Update the registry README."""
+    """Update both the ai-built-agents/README.md and main README.md registries."""
     if not state.get("idea") or not state.get("agent_dir"):
         state["errors"].append("Missing idea or agent_dir for registry update")
         return state
     
     idea = AgentIdea(**state["idea"])
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    # Registry is in ai-built-agents/README.md at repo root
+    
+    # Update ai-built-agents/README.md
     agents_dir = os.path.join(repo_root, "ai-built-agents")
     os.makedirs(agents_dir, exist_ok=True)  # Ensure directory exists
-    registry_path = os.path.join(agents_dir, "README.md")
+    agents_registry_path = os.path.join(agents_dir, "README.md")
     
-    # Read current registry
-    if os.path.exists(registry_path):
-        with open(registry_path, "r") as f:
-            registry_content = f.read()
+    # Read current ai-built-agents registry
+    if os.path.exists(agents_registry_path):
+        with open(agents_registry_path, "r") as f:
+            agents_registry_content = f.read()
     else:
-        registry_content = "# AI Built Agents Registry\n\nThis directory contains all agents built by the Agent Builder.\n\n## Available Agents\n\n"
-    
-    state["registry_content"] = registry_content
+        agents_registry_content = "# AI Built Agents Registry\n\nThis directory contains all agents built by the Agent Builder.\n\n## Available Agents\n\n"
     
     # Create registry entry
     entry = {
@@ -221,9 +220,57 @@ def update_registry(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
         "link": f"./{state['date']}-{idea.slug}/README.md",
     }
     
-    # Update registry (simple text manipulation)
-    # Find "## Available Agents" section and insert new entry
-    lines = registry_content.split('\n')
+    # Update ai-built-agents registry
+    agents_updated_content = _insert_registry_entry(
+        agents_registry_content, 
+        idea, 
+        state["date"], 
+        entry["link"]
+    )
+    
+    # Update main README.md
+    main_readme_path = os.path.join(repo_root, "README.md")
+    if os.path.exists(main_readme_path):
+        with open(main_readme_path, "r") as f:
+            main_readme_content = f.read()
+    else:
+        main_readme_content = "## Overview\n\nThis repository contains independent AI agent projects.\n\n## Available Agents\n\n"
+    
+    # Create entry for main README with correct path
+    main_entry_link = f"./ai-built-agents/{state['date']}-{idea.slug}/README.md"
+    main_updated_content = _insert_registry_entry(
+        main_readme_content,
+        idea,
+        state["date"],
+        main_entry_link
+    )
+    
+    # Write both updated files
+    try:
+        with open(agents_registry_path, "w") as f:
+            f.write(agents_updated_content)
+        
+        with open(main_readme_path, "w") as f:
+            f.write(main_updated_content)
+        
+        state["registry_updated"] = True
+    except Exception as e:
+        state["errors"].append(f"Failed to update registry: {str(e)}")
+        state["registry_updated"] = False
+    
+    return state
+
+
+def _insert_registry_entry(content: str, idea, date: str, link: str) -> str:
+    """Helper function to insert a registry entry into README content.
+    
+    Args:
+        content: Current README content
+        idea: AgentIdea object
+        date: Date string
+        link: Relative link to agent README
+    """
+    lines = content.split('\n')
     new_lines = []
     inserted = False
     in_section = False
@@ -236,37 +283,28 @@ def update_registry(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
         
         if in_section and not inserted:
             if line.startswith('###') or (line.startswith('##') and 'Available' not in line):
-                # Insert before this entry
+                # Insert before this entry (newest first)
                 new_lines.append(f"\n### {idea.name}")
                 new_lines.append(f"\n{idea.description}")
                 new_lines.append(f"\n**Category:** {idea.category}")
-                new_lines.append(f"\n**Date:** {state['date']}")
-                new_lines.append(f"\n[📖 Read the {idea.name} README]({entry['link']})")
+                new_lines.append(f"\n**Date:** {date}")
+                new_lines.append(f"\n[📖 Read the {idea.name} README]({link})")
                 new_lines.append("")
                 inserted = True
         
         new_lines.append(line)
     
     if not inserted:
-        # Append to end
+        # Append to end if section not found
+        if not in_section:
+            new_lines.append("\n## Available Agents\n")
         new_lines.append(f"\n### {idea.name}")
         new_lines.append(f"\n{idea.description}")
         new_lines.append(f"\n**Category:** {idea.category}")
-        new_lines.append(f"\n**Date:** {state['date']}")
-        new_lines.append(f"\n[📖 Read the {idea.name} README]({entry['link']})")
+        new_lines.append(f"\n**Date:** {date}")
+        new_lines.append(f"\n[📖 Read the {idea.name} README]({link})")
     
-    updated_content = '\n'.join(new_lines)
-    
-    # Write updated registry
-    try:
-        with open(registry_path, "w") as f:
-            f.write(updated_content)
-        state["registry_updated"] = True
-    except Exception as e:
-        state["errors"].append(f"Failed to update registry: {str(e)}")
-        state["registry_updated"] = False
-    
-    return state
+    return '\n'.join(new_lines)
 
 
 def commit_and_push(state: AgentBuilderGraphState) -> AgentBuilderGraphState:

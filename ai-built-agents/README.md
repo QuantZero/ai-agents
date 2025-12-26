@@ -7,6 +7,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Daily Focus Enhancer
+
+A personalized agent that helps people maintain focus and productivity by managing distractions and optimizing work schedules.
+
+**Category:** productivity
+
+**Date:** 2025-12-26
+
+[📖 Read the Daily Focus Enhancer README](./2025-12-26-daily-focus-enhancer/README.md)
+
 ### Daily Stress Manager
 
 An AI agent that helps individuals identify stress triggers and suggests personalized strategies to manage stress effectively.
