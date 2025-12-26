@@ -21,7 +21,7 @@ def run_daily_agent_build():
     print(f"Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"{'='*60}\n")
     
-    # Get repository root
+    # Get repository root (parent of agent-builder-agent)
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
     # Get existing agents to avoid duplicates
@@ -29,7 +29,7 @@ def run_daily_agent_build():
     print(f"Found {len(existing_agents)} existing agents")
     
     # Count agents to determine number
-    agents_dir = Path(repo_root) / "agents"
+    agents_dir = Path(repo_root) / "ai-built-agents"
     if agents_dir.exists():
         agent_count = len([d for d in agents_dir.iterdir() if d.is_dir()])
     else:

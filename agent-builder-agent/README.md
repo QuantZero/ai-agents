@@ -126,16 +126,21 @@ For production use, it's recommended to use your system's scheduler:
 Each generated agent follows this structure:
 
 ```
-agents/
-  YYYY-MM-DD-agent-name/
-    README.md          # Comprehensive documentation
-    agent.py           # Main entry point
-    schemas.py         # Pydantic models (if needed)
-    prompts.py         # Prompts (if needed)
-    graph.py           # LangGraph workflow (if needed)
-    tools.py           # Tools (if needed)
-    pyproject.toml     # Dependencies
-    .env.example       # Environment variables template (if needed)
+ai-projects/
+  ai-built-agents/
+    README.md                    # Registry of all built agents
+    YYYY-MM-DD-agent-name/
+      README.md                  # Comprehensive documentation
+      agent.py                   # Main entry point
+      schemas.py                 # Pydantic models (if needed)
+      prompts.py                 # Prompts (if needed)
+      graph.py                   # LangGraph workflow (if needed)
+      tools.py                   # Tools (if needed)
+      pyproject.toml             # Dependencies
+      .env.example               # Environment variables template (if needed)
+  agent-builder-agent/
+    ├── main.py
+    └── ...
 ```
 
 ## Generated Agent Standards
@@ -223,7 +228,7 @@ Git Committed: True
 Email Sent: True
 
 Agent Built: Code Review Agent
-Location: /path/to/agents/2024-01-15-code-review-agent
+Location: /path/to/ai-built-agents/2024-01-15-code-review-agent
 
 ============================================================
 

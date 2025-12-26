@@ -174,7 +174,7 @@ def write_files(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
     # Get repo root (parent of agent-builder-agent)
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
-    # Create agent directory
+    # Create agent directory in ai-built-agents/ at repo root
     agent_dir = create_agent_directory(repo_root, state["date"], idea.slug)
     state["agent_dir"] = agent_dir
     
@@ -198,14 +198,17 @@ def update_registry(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
     
     idea = AgentIdea(**state["idea"])
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    registry_path = os.path.join(repo_root, state["registry_readme_path"])
+    # Registry is in ai-built-agents/README.md at repo root
+    agents_dir = os.path.join(repo_root, "ai-built-agents")
+    os.makedirs(agents_dir, exist_ok=True)  # Ensure directory exists
+    registry_path = os.path.join(agents_dir, "README.md")
     
     # Read current registry
     if os.path.exists(registry_path):
         with open(registry_path, "r") as f:
             registry_content = f.read()
     else:
-        registry_content = "# AI Agents Registry\n\n## Available Agents\n\n"
+        registry_content = "# AI Built Agents Registry\n\nThis directory contains all agents built by the Agent Builder.\n\n## Available Agents\n\n"
     
     state["registry_content"] = registry_content
     
@@ -215,7 +218,7 @@ def update_registry(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
         "name": idea.name,
         "description": idea.description,
         "category": idea.category,
-        "link": f"./agents/{state['date']}-{idea.slug}/README.md",
+        "link": f"./{state['date']}-{idea.slug}/README.md",
     }
     
     # Update registry (simple text manipulation)
@@ -273,6 +276,7 @@ def commit_and_push(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
         return state
     
     idea = AgentIdea(**state["idea"])
+    # Use repo root (parent of agent-builder-agent) for git operations
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     
     success, message = git_commit_and_push(repo_root, idea.name, state["date"])
@@ -360,7 +364,7 @@ def send_summary_email(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
             email_content = response.content
         else:
             idea = AgentIdea(**state["idea"])
-            github_link = f"{os.getenv('GITHUB_REPO_URL', 'https://github.com/user/repo')}/tree/main/agents/{state['date']}-{idea.slug}"
+            github_link = f"{os.getenv('GITHUB_REPO_URL', 'https://github.com/user/repo')}/tree/main/ai-built-agents/{state['date']}-{idea.slug}"
             
             prompt = SUCCESS_REPORT_PROMPT.format(
                 name=idea.name,

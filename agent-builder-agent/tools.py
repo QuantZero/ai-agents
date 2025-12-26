@@ -11,28 +11,23 @@ from schemas import AgentIdea, AgentImplementation, RegistryEntry
 
 
 def get_existing_agents(repo_root: str) -> list[str]:
-    """Get list of existing agent names from the repository."""
+    """Get list of existing agent names from the ai-built-agents directory at repo root."""
     agents = []
     repo_path = Path(repo_root)
     
-    # Check for agents/ directory (new structure)
-    agents_dir = repo_path / "agents"
+    # Check for ai-built-agents/ directory at repo root
+    agents_dir = repo_path / "ai-built-agents"
     if agents_dir.exists():
         for item in agents_dir.iterdir():
             if item.is_dir() and not item.name.startswith('.'):
                 agents.append(item.name)
     
-    # Also check root-level agent directories (legacy structure)
-    for item in repo_path.iterdir():
-        if item.is_dir() and item.name.endswith('-agent') and item.name != 'agent-builder-agent':
-            agents.append(item.name)
-    
     return agents
 
 
 def create_agent_directory(repo_root: str, date: str, slug: str) -> str:
-    """Create directory for new agent: agents/YYYY-MM-DD-agent-name/"""
-    agents_dir = Path(repo_root) / "agents"
+    """Create directory for new agent: ai-built-agents/YYYY-MM-DD-agent-name/ at repo root"""
+    agents_dir = Path(repo_root) / "ai-built-agents"
     agents_dir.mkdir(exist_ok=True)
     
     agent_dir = agents_dir / f"{date}-{slug}"
