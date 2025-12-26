@@ -118,9 +118,20 @@ This will:
 
 To stop the scheduled execution, press `Ctrl+C`.
 
-### Using System Scheduler (Recommended)
+### Using GitHub Actions (Recommended for Public Repos)
 
-For production use, it's recommended to use your system's scheduler:
+**Best for**: Running automatically in the cloud, even when your PC is off.
+
+See [GITHUB_ACTIONS_SETUP.md](./GITHUB_ACTIONS_SETUP.md) for complete setup instructions.
+
+Quick setup:
+1. The workflow file is already created at `.github/workflows/daily-agent-builder.yml`
+2. Add secrets to GitHub: `OPENAI_API_KEY`, `SMTP_USER`, `SMTP_PASSWORD`, `EMAIL_RECIPIENT`
+3. The workflow will run daily at 9:00 AM UTC automatically
+
+### Using System Scheduler (Local Only)
+
+For running locally on your machine:
 
 **macOS (launchd):**
 ```bash
@@ -133,6 +144,8 @@ For production use, it's recommended to use your system's scheduler:
 # Add to crontab (crontab -e)
 0 9 * * * cd /path/to/agent-builder-agent && /usr/bin/python3 main.py
 ```
+
+**Note**: System scheduler requires your PC to be on and connected to the internet.
 
 ## Agent Structure
 
