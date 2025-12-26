@@ -16,6 +16,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 [📖 Read the Dependency Conflict Resolver README](./ai-built-agents/2025-12-26-dependency-conflict-resolver/README.md)
 
+
+### Smart Bill Tracker
+
+Effortlessly manage and track all your bills to avoid late fees and stress.
+
+**Category:** finance
+
+**Date:** 2025-12-26
+
+[📖 Read the Smart Bill Tracker README](./ai-built-agents/2025-12-26-smart-bill-tracker/README.md)
+
 ### 🚀 MVP Planner Agent
 
 A planning agent that helps refine mobile app MVP ideas into clear, technical, builder-ready specifications. Generates a comprehensive builder prompt for the MVP Builder Agent.

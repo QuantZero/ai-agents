@@ -10,6 +10,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Bill Tracker
+
+Effortlessly manage and track all your bills to avoid late fees and stress.
+
+**Category:** finance
+
+**Date:** 2025-12-26
+
+[📖 Read the Smart Bill Tracker README](./2025-12-26-smart-bill-tracker/README.md)
+
 ### Sleep Optimizer
 
 Helps millions improve sleep quality by analyzing patterns and suggesting personalized adjustments.
