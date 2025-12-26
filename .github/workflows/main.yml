@@ -30,7 +30,13 @@ jobs:
     
     - name: Install dependencies
       working-directory: ./agent-builder-agent
-      run: uv sync
+      run: |
+        # Ensure virtual environment is created and dependencies are installed
+        uv venv
+        uv sync
+        # Verify dotenv is installed
+        echo "Checking installed packages:"
+        uv pip list | head -20
     
     - name: Run Agent Builder
       working-directory: ./agent-builder-agent
@@ -42,7 +48,7 @@ jobs:
         SMTP_USER: ${{ secrets.SMTP_USER }}
         SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
         EMAIL_RECIPIENT: ${{ secrets.EMAIL_RECIPIENT }}
-        GITHUB_REPO_URL: ${{ secrets.GITHUB_REPO_URL || 'https://github.com/${{ github.repository }}' }}
+        GITHUB_REPO_URL: ${{ secrets.GITHUB_REPO_URL }}
         DAILY_RUN_TIME: ${{ secrets.DAILY_RUN_TIME || '09:00' }}
         # Configure git for commits
         GIT_AUTHOR_NAME: ${{ secrets.GIT_AUTHOR_NAME || 'Agent Builder' }}
@@ -52,6 +58,12 @@ jobs:
       run: |
         git config --global user.name "$GIT_AUTHOR_NAME"
         git config --global user.email "$GIT_AUTHOR_EMAIL"
+        export GITHUB_REPO_URL="${GITHUB_REPO_URL:-https://github.com/${{ github.repository }}}"
+        # Activate the virtual environment and verify it's working
+        source .venv/bin/activate
+        echo "Python path: $(which python)"
+        echo "Python version: $(python --version)"
+        python -c "import dotenv; print('✓ dotenv imported successfully')" || echo "✗ dotenv import failed"
         python main.py
     
     - name: Commit and push changes
