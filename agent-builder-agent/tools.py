@@ -162,17 +162,12 @@ def git_commit_and_push(repo_root: str, agent_name: str, date: str) -> tuple[boo
 
 
 def send_email(email_content: str, recipient: Optional[str] = None) -> bool:
-    """Send email using system mail command or SMTP."""
-    # For now, we'll use a simple approach
-    # In production, you'd use SMTP or a service like SendGrid
+    """Send email using system mail command or SMTP.
     
-    recipient = recipient or os.getenv("EMAIL_RECIPIENT")
-    if not recipient:
-        print("No email recipient configured. Email content:")
-        print("\n" + "="*60)
-        print(email_content)
-        print("="*60)
-        return False
+    Hardcoded recipient: jamesdev0101@gmail.com
+    """
+    # Hardcoded developer email address
+    recipient = recipient or "jamesdev0101@gmail.com"
     
     try:
         # Try using system mail command (Unix/Mac)

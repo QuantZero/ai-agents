@@ -15,6 +15,8 @@ from prompts import (
     AGENT_IMPLEMENTATION_PROMPT,
     REGISTRY_UPDATE_PROMPT,
     EMAIL_PROMPT,
+    ERROR_REPORT_PROMPT,
+    SUCCESS_REPORT_PROMPT,
 )
 from tools import (
     get_existing_agents,
@@ -285,43 +287,109 @@ def commit_and_push(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
 
 
 def send_summary_email(state: AgentBuilderGraphState) -> AgentBuilderGraphState:
-    """Send summary email."""
-    if not state.get("idea"):
-        state["errors"].append("No idea available for email")
-        return state
+    """Send summary email - success report if no errors, error report if errors exist.
     
-    idea = AgentIdea(**state["idea"])
+    Always sends an email to jamesdev0101@gmail.com regardless of success or failure.
+    """
     llm = get_llm()
-    
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    github_link = f"{os.getenv('GITHUB_REPO_URL', 'https://github.com/user/repo')}/tree/main/agents/{state['date']}-{idea.slug}"
     
-    prompt = EMAIL_PROMPT.format(
-        name=idea.name,
-        description=idea.description,
-        problem=idea.problem,
-        category=idea.category,
-        tech_stack=", ".join(idea.tech_stack),
-        github_link=github_link,
-        count=state["agent_count"] + 1,
+    # Check if there are errors or if the run was not fully successful
+    has_errors = state.get("errors") and len(state["errors"]) > 0
+    is_successful = (
+        state.get("idea_generated") and 
+        state.get("implementation_created") and 
+        state.get("files_written") and 
+        state.get("registry_updated")
     )
     
-    messages = [
-        SystemMessage(content="You are a technical writer. Generate clear, concise emails."),
-        HumanMessage(content=prompt),
-    ]
+    if has_errors or not is_successful:
+        # Send error report
+        errors_str = "\n".join([f"- {e}" for e in state["errors"]]) if state.get("errors") else "Unknown error"
+        
+        # Determine status based on what was completed
+        if state.get("files_written"):
+            status = "Partial - Files written but registry/git failed"
+        elif state.get("implementation_created"):
+            status = "Partial - Implementation created but files not written"
+        elif state.get("idea_generated"):
+            status = "Partial - Idea generated but implementation failed"
+        else:
+            status = "Failed - Critical error in early stages"
+        
+        # Include agent info if available
+        agent_info = ""
+        if state.get("idea"):
+            try:
+                idea = AgentIdea(**state["idea"])
+                agent_info = f"\n\nAgent Info (if created):\n- Name: {idea.name}\n- Description: {idea.description}"
+            except:
+                pass
+        
+        prompt = ERROR_REPORT_PROMPT.format(
+            date=state["date"],
+            errors=errors_str + agent_info,
+            status=status,
+            agent_count=state["agent_count"],
+        )
+        
+        messages = [
+            SystemMessage(content="You are a technical writer. Generate clear, actionable error reports."),
+            HumanMessage(content=prompt),
+        ]
+        
+        response = llm.invoke(messages)
+        email_content = response.content
+        
+    else:
+        # Send success report
+        if not state.get("idea"):
+            # This shouldn't happen if successful, but handle it
+            errors_str = "No idea available for success report"
+            prompt = ERROR_REPORT_PROMPT.format(
+                date=state["date"],
+                errors=errors_str,
+                status="Failed - No idea generated",
+                agent_count=state["agent_count"],
+            )
+            messages = [
+                SystemMessage(content="You are a technical writer. Generate clear, actionable error reports."),
+                HumanMessage(content=prompt),
+            ]
+            response = llm.invoke(messages)
+            email_content = response.content
+        else:
+            idea = AgentIdea(**state["idea"])
+            github_link = f"{os.getenv('GITHUB_REPO_URL', 'https://github.com/user/repo')}/tree/main/agents/{state['date']}-{idea.slug}"
+            
+            prompt = SUCCESS_REPORT_PROMPT.format(
+                name=idea.name,
+                description=idea.description,
+                problem=idea.problem,
+                category=idea.category,
+                tech_stack=", ".join(idea.tech_stack),
+                github_link=github_link,
+                count=state["agent_count"] + 1,
+                date=state["date"],
+            )
+            
+            messages = [
+                SystemMessage(content="You are a technical writer. Generate clear, concise success reports."),
+                HumanMessage(content=prompt),
+            ]
+            
+            response = llm.invoke(messages)
+            email_content = response.content
     
-    response = llm.invoke(messages)
-    email_content = response.content
-    
+    # Always send email (hardcoded to jamesdev0101@gmail.com)
     success = send_email(email_content)
     
     if success:
         state["email_sent"] = True
     else:
-        # Don't fail the run if email fails
+        # Log but don't fail - email is critical for reporting
         state["email_sent"] = False
-        state["errors"].append("Email sending failed (non-critical)")
+        state["errors"].append("Email sending failed - manual review required")
     
     return state
 
@@ -341,7 +409,10 @@ def should_continue(state: AgentBuilderGraphState) -> str:
 
 
 def build_graph() -> StateGraph:
-    """Build the LangGraph workflow."""
+    """Build the LangGraph workflow.
+    
+    The workflow always ends with sending an email report, regardless of success or failure.
+    """
     workflow = StateGraph(AgentBuilderGraphState)
     
     # Add nodes
@@ -355,7 +426,8 @@ def build_graph() -> StateGraph:
     # Set entry point
     workflow.set_entry_point("generate_idea")
     
-    # Add edges
+    # Add edges - always flow to next step, even if previous step had errors
+    # This ensures we always send an email report
     workflow.add_edge("generate_idea", "implement_agent")
     workflow.add_edge("implement_agent", "write_files")
     workflow.add_edge("write_files", "update_registry")

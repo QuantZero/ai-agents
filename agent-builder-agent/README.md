@@ -17,22 +17,29 @@ Each daily run results in a complete, working agent that follows modern best pra
 ## Features
 
 - 🤖 **Autonomous Operation**: Runs daily at a scheduled time
-- 🎯 **Novel Ideas**: Generates distinct, practical agent ideas avoiding duplicates
+- 🎯 **High-Value Ideas**: Generates agents that solve critical problems for large audiences
+- 💎 **Elegant Solutions**: Focuses on everyday problems that improve living standards
 - 🏗️ **Production-Ready**: Implements agents with proper structure, typing, and documentation
 - 📚 **Auto-Documentation**: Creates comprehensive READMEs and updates registry
 - 🔄 **Git Integration**: Automatically commits and pushes to GitHub
-- 📧 **Email Summaries**: Sends daily build summaries
+- 📧 **Email Reports**: Always sends reports (success or error) to developer
 
 ## Architecture
 
 The agent uses LangGraph to orchestrate a multi-step workflow:
 
-1. **Idea Generation**: Uses LLM to generate a novel agent idea
+1. **Idea Generation**: Uses LLM to generate a novel, high-value agent idea for large audiences
 2. **Implementation**: Generates complete agent code following standards
 3. **File Writing**: Creates agent directory structure and files
 4. **Registry Update**: Updates main README with new agent entry
 5. **Git Commit**: Commits and pushes changes
-6. **Email Summary**: Sends build summary email
+6. **Email Report**: Always sends a report (success or error) to jamesdev0101@gmail.com
+
+**Focus Areas**: The agent prioritizes problems affecting millions of people:
+- Health & wellness, Personal finance, Education & learning
+- Productivity & time management, Communication & relationships
+- Safety & security, Home & lifestyle, Career development
+- Mental health & well-being, Accessibility & inclusion
 
 ## Requirements
 
@@ -68,8 +75,11 @@ OPENAI_API_KEY=your_openai_api_key_here
 OPENAI_MODEL=gpt-4o  # Default: gpt-4o
 DAILY_RUN_TIME=09:00  # Default: 09:00 (24-hour format)
 GITHUB_REPO_URL=https://github.com/user/repo  # For email links
-EMAIL_RECIPIENT=your@email.com  # For email summaries (optional)
 ```
+
+**Note**: All email reports are automatically sent to `jamesdev0101@gmail.com` (hardcoded). This includes:
+- Success reports (what was created, why, and how)
+- Error reports (what failed, why, and how to fix)
 
 ## Usage
 
@@ -177,16 +187,19 @@ The agent:
 - Pushes to the remote repository
 - Handles errors gracefully
 
-## Error Handling
+## Error Handling & Reporting
 
-The agent tracks errors at each step:
-- Idea generation failures
-- Implementation failures
-- File writing errors
-- Git operation errors
-- Email sending failures (non-critical)
+The agent tracks errors at each step and always sends an email report:
+- **Success Reports**: Sent when agent is successfully built, including:
+  - What was created (agent description and functionality)
+  - Why it exists (problem solved and value for large audiences)
+  - How it works (architecture and implementation approach)
+- **Error Reports**: Sent when any step fails, including:
+  - What happened (summary of the run and failure point)
+  - Why it failed (detailed error explanation)
+  - How to fix it (suggested solutions)
 
-Critical errors stop the workflow. Non-critical errors (like email) are logged but don't fail the run.
+All reports are sent to `jamesdev0101@gmail.com` (hardcoded). The workflow always completes the email step, even if earlier steps failed.
 
 ## Example Output
 

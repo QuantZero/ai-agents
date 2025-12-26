@@ -7,6 +7,17 @@ This repository contains independent AI agent projects, each with its own purpos
 ## Available Agents
 
 
+
+### Smart Meal Planner
+
+An AI-driven meal planner that simplifies healthy eating and saves time by automating weekly meal planning and grocery list creation.
+
+**Category:** lifestyle
+
+**Date:** 2025-12-26
+
+[📖 Read the Smart Meal Planner README](./agents/2025-12-26-smart-meal-planner/README.md)
+
 ### Dependency Conflict Resolver
 
 An agent that automatically identifies and resolves dependency conflicts in software projects.

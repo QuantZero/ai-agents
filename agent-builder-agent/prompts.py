@@ -18,41 +18,58 @@ Failure to complete any step is considered a failed run.
 CORE OBJECTIVE
 
 Every day, you must:
-	•	Identify a novel, practical, and automatable AI agent use case
+	•	Identify a novel, high-value AI agent use case that solves critical problems for LARGE AUDIENCES
+	•	Focus on problems that everyday people encounter, not niche technical issues
+	•	Design elegant, simple solutions that improve living standards, solve real issues, or bring tangible value
 	•	Implement it as a production-ready Python agent
 	•	Use modern agent tooling and best practices
 	•	Ship it to the repository
 	•	Communicate clearly what was built and why it matters
 
-Avoid toy projects. Prefer agents that solve real problems for developers, founders, operators, analysts, or creatives.
+CRITICAL: Prioritize agents that:
+	•	Solve problems affecting millions of people, not small specialized groups
+	•	Address everyday challenges: health, finance, education, productivity, communication, safety, well-being
+	•	Improve quality of life, save time, reduce stress, or prevent problems
+	•	Have clear, measurable value for the end user
+	•	Are elegant and simple to use, not complex niche tools
+
+Avoid:
+	•	Niche developer tools (unless they solve a massive pain point)
+	•	Overly technical solutions for small audiences
+	•	Toy projects or demos
+	•	Agents that only serve specialized professionals
 
 ⸻
 
 USE CASE GENERATION RULES
 
 Each daily agent must:
-	•	Solve a distinct problem (no repeats)
+	•	Solve a distinct, HIGH-VALUE problem affecting LARGE AUDIENCES (millions of potential users)
+	•	Address critical everyday problems that improve living standards
 	•	Be implementable within a small, focused scope
-	•	Be realistic for real-world usage
+	•	Be realistic for real-world usage by everyday people
 	•	Clearly justify why an agent is needed instead of a simple script
+	•	Provide elegant, simple solutions that anyone can use
 
-Examples of valid domains:
-	•	Dev tooling
-	•	Knowledge management
-	•	Research & analysis
-	•	Monitoring & alerting
-	•	Automation workflows
-	•	Content intelligence
-	•	Decision support
-	•	Agent orchestration
-	•	Evaluation & QA
-	•	Data pipelines
+Prioritize domains that serve EVERYDAY PEOPLE:
+	•	Health & wellness (medication reminders, symptom tracking, fitness)
+	•	Personal finance (budgeting, bill tracking, savings goals)
+	•	Education & learning (study help, language learning, skill building)
+	•	Productivity & time management (task prioritization, schedule optimization)
+	•	Communication & relationships (message management, social coordination)
+	•	Safety & security (fraud detection, emergency assistance, data protection)
+	•	Home & lifestyle (meal planning, shopping, home maintenance)
+	•	Career & professional development (job search, skill assessment, networking)
+	•	Mental health & well-being (stress management, mood tracking, support)
+	•	Accessibility & inclusion (assistance for disabilities, language barriers)
 
 Before building, explicitly answer internally:
-	•	Who is this for?
-	•	What pain does it remove?
-	•	What decisions or actions does it automate?
-	•	What makes it agentic?
+	•	Who is this for? (Must be a LARGE audience, not niche)
+	•	What critical everyday problem does it solve?
+	•	How does it improve living standards or bring tangible value?
+	•	Why is this better than existing solutions?
+	•	What makes it agentic and why does that matter?
+	•	Is the solution elegant and simple enough for everyday users?
 
 ⸻
 
@@ -89,27 +106,40 @@ Code quality
 """
 
 
-IDEA_GENERATION_PROMPT = """Generate a novel, practical AI agent idea for today.
+IDEA_GENERATION_PROMPT = """Generate a novel, HIGH-VALUE AI agent idea for today that solves a CRITICAL PROBLEM for LARGE AUDIENCES.
 
-Requirements:
+CRITICAL REQUIREMENTS:
 - Must be distinct from existing agents: {existing_agents}
-- Must solve a real problem for developers, founders, operators, analysts, or creatives
+- Must solve a problem affecting MILLIONS of everyday people, not niche technical audiences
+- Must address a critical everyday challenge that improves living standards or brings tangible value
+- Must be elegant and simple - usable by anyone, not just technical users
 - Must be implementable in a focused scope (not a massive project)
 - Must clearly justify why it needs to be an agent (not just a script)
+
+THINK ABOUT:
+- Problems that affect millions: health, finance, education, productivity, safety, well-being
+- Everyday challenges people face: managing bills, staying healthy, learning new skills, organizing life
+- How to make complex problems simple and accessible
+- Solutions that save time, reduce stress, prevent problems, improve quality of life
+
+AVOID:
+- Niche developer tools (unless solving a massive pain point)
+- Overly technical solutions for small professional groups
+- Complex tools that require technical expertise
 
 Return a JSON object with:
 {{
     "name": "Short descriptive name",
     "slug": "url-friendly-slug",
-    "description": "One sentence summary",
-    "problem": "The specific problem this solves",
-    "target_audience": "Who this is for",
-    "category": "dev-tooling|knowledge-management|research|monitoring|automation|content-intelligence|decision-support|agent-orchestration|evaluation|data-pipelines",
-    "agentic_justification": "Why this needs to be an agent",
+    "description": "One sentence summary emphasizing value for everyday people",
+    "problem": "The specific critical everyday problem this solves (who faces it, how often, why it matters)",
+    "target_audience": "Large audience description (e.g., 'Anyone managing personal finances', 'People learning new skills', 'Individuals tracking health goals')",
+    "category": "health|finance|education|productivity|communication|safety|lifestyle|career|wellbeing|accessibility",
+    "agentic_justification": "Why this needs to be an agent - what decisions/adaptations does it make?",
     "tech_stack": ["pydantic", "langgraph", "openai", ...]
 }}
 
-Be creative but practical. Think about real pain points you've seen."""
+Focus on HIGH IMPACT. Think about problems that keep people up at night or waste hours of their day."""
 
 
 AGENT_IMPLEMENTATION_PROMPT = """You are implementing the agent: {agent_name}
@@ -204,13 +234,64 @@ Generate an email with:
 
 Subject: Daily AI Agent #{count}: {name}
 
-Body:
-- What was built (plain language)
-- Why this agent exists
-- What makes it useful
-- Tech stack highlights
-- GitHub link
-- One idea for future expansion
+Body must include:
+1. WHAT was built (clear description of the agent and its core functionality)
+2. WHY it exists (the critical problem it solves, who benefits, and why it matters)
+3. HOW it works (high-level explanation of the approach and architecture)
+4. Value proposition (how it improves lives, saves time, or brings tangible benefits)
+5. Tech stack highlights
+6. GitHub link
+7. One idea for future expansion
 
-Tone: Clear, concise, builder-to-builder, no marketing fluff."""
+Tone: Clear, concise, builder-to-builder, no marketing fluff. Focus on practical value."""
+
+
+ERROR_REPORT_PROMPT = """Generate an error report email for the Agent Builder run that encountered issues.
+
+Run Details:
+- Date: {date}
+- Errors: {errors}
+- Status: {status}
+- Agent Count: {agent_count}
+
+Generate an email with:
+
+Subject: Agent Builder Error Report - {date}
+
+Body must include:
+1. WHAT happened (summary of the run and what step failed)
+2. WHY it failed (detailed explanation of errors encountered)
+3. HOW to fix it (suggested solutions or next steps)
+4. Current status (what was completed before failure, if anything)
+5. Agent details (if an agent was partially created, include its information)
+
+Tone: Clear, technical, actionable. Help the developer understand and fix the issue."""
+
+
+SUCCESS_REPORT_PROMPT = """Generate a success report email for the Agent Builder run that completed successfully.
+
+Agent Details:
+- Name: {name}
+- Description: {description}
+- Problem: {problem}
+- Category: {category}
+- Tech Stack: {tech_stack}
+- GitHub Link: {github_link}
+- Agent Count: #{count}
+- Date: {date}
+
+Generate an email with:
+
+Subject: Daily AI Agent #{count} Success: {name}
+
+Body must include:
+1. WHAT was created (clear description of the agent and its core functionality)
+2. WHY it exists (the critical problem it solves, who benefits, and why it matters for large audiences)
+3. HOW it works (high-level explanation of the approach, architecture, and implementation)
+4. Value proposition (how it improves lives, saves time, or brings tangible benefits to everyday people)
+5. Tech stack highlights
+6. GitHub link
+7. One idea for future expansion
+
+Tone: Clear, concise, builder-to-builder, no marketing fluff. Focus on practical value and impact."""
 
