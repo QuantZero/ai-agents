@@ -6,6 +6,17 @@ This repository contains independent AI agent projects, each with its own purpos
 
 ## Available Agents
 
+
+### Dependency Conflict Resolver
+
+An agent that automatically identifies and resolves dependency conflicts in software projects.
+
+**Category:** dev-tooling
+
+**Date:** 2025-12-26
+
+[📖 Read the Dependency Conflict Resolver README](./agents/2025-12-26-dependency-conflict-resolver/README.md)
+
 ### 🚀 MVP Planner Agent
 
 A planning agent that helps refine mobile app MVP ideas into clear, technical, builder-ready specifications. Generates a comprehensive builder prompt for the MVP Builder Agent.
