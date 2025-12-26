@@ -9,6 +9,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Sleep Optimizer
+
+Helps millions improve sleep quality by analyzing patterns and suggesting personalized adjustments.
+
+**Category:** health
+
+**Date:** 2025-12-26
+
+[📖 Read the Sleep Optimizer README](./2025-12-26-sleep-optimizer/README.md)
+
 ### Smart Habit Builder
 
 An AI agent that helps people build and sustain healthy habits effortlessly.

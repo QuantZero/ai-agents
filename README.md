@@ -18,6 +18,17 @@ Agents in the [`ai-built-agents`](./ai-built-agents/) directory are automaticall
 
 
 
+
+### Sleep Optimizer
+
+Helps millions improve sleep quality by analyzing patterns and suggesting personalized adjustments.
+
+**Category:** health
+
+**Date:** 2025-12-26
+
+[📖 Read the Sleep Optimizer README](./ai-built-agents/2025-12-26-sleep-optimizer/README.md)
+
 ### Smart Habit Builder
 
 An AI agent that helps people build and sustain healthy habits effortlessly.

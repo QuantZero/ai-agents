@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sleep-optimizer"
+version = "0.1.0"
+description = "An AI agent to optimize and improve sleep quality based on user habits and conditions."
+authors = ["Agent Foundry"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = ">=2.9.0"
+langgraph = ">=0.2.0"
+langchain-openai = ">=0.2.0"
+python-dotenv = ">=1.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
