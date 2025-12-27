@@ -21,7 +21,7 @@ BUILD_OUTPUT_DIR = os.getenv("BUILD_OUTPUT_DIR", "generated_prototype")
 
 # Pricing information per million tokens (as of December 2024)
 # Format: {model_name: {"input": price, "output": price, "cached_input": price or None}}
-MODEL_PRICING = {
+MODEL_PRICING = {wqenqwjneiquwjenqwkjne
     # OpenAI Models
     "gpt-5.2-pro": {"input": 21.00, "output": 168.00, "cached_input": None},
     "gpt-5.2-thinking": {"input": 1.75, "output": 14.00, "cached_input": 0.175},

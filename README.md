@@ -17,6 +17,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 [📖 Read the Dependency Conflict Resolver README](./ai-built-agents/2025-12-26-dependency-conflict-resolver/README.md)
 
 
+
+### Smart Medication Manager
+
+A smart assistant that ensures you never miss a dose and keeps track of medication schedules effortlessly.
+
+**Category:** health
+
+**Date:** 2025-12-26
+
+[📖 Read the Smart Medication Manager README](./ai-built-agents/2025-12-26-smart-medication-manager/README.md)
+
 ### Smart Bill Tracker
 
 Effortlessly manage and track all your bills to avoid late fees and stress.

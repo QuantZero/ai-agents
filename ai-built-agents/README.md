@@ -11,6 +11,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Medication Manager
+
+A smart assistant that ensures you never miss a dose and keeps track of medication schedules effortlessly.
+
+**Category:** health
+
+**Date:** 2025-12-26
+
+[📖 Read the Smart Medication Manager README](./2025-12-26-smart-medication-manager/README.md)
+
 ### Smart Bill Tracker
 
 Effortlessly manage and track all your bills to avoid late fees and stress.
