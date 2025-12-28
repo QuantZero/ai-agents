@@ -12,6 +12,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Exercise Companion
+
+An adaptive agent that personalizes and optimizes exercise routines for everyday individuals to improve fitness and well-being.
+
+**Category:** health
+
+**Date:** 2025-12-28
+
+[📖 Read the Smart Exercise Companion README](./2025-12-28-smart-exercise-companion/README.md)
+
 ### Smart Medication Manager
 
 A smart assistant that ensures you never miss a dose and keeps track of medication schedules effortlessly.
