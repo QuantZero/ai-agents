@@ -19,6 +19,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Daily Energy Manager
+
+A personalized agent that optimizes daily energy levels by recommending activities and rest periods to enhance productivity and well-being.
+
+**Category:** wellbeing
+
+**Date:** 2025-12-29
+
+[📖 Read the Smart Daily Energy Manager README](./ai-built-agents/2025-12-29-smart-daily-energy-manager/README.md)
+
 ### Smart Exercise Companion
 
 An adaptive agent that personalizes and optimizes exercise routines for everyday individuals to improve fitness and well-being.
