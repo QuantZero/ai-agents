@@ -20,6 +20,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Grocery Saver
+
+Optimizes grocery shopping and budgeting to reduce waste and save money for everyday families.
+
+**Category:** lifestyle
+
+**Date:** 2025-12-30
+
+[📖 Read the Smart Grocery Saver README](./ai-built-agents/2025-12-30-smart-grocery-saver/README.md)
+
 ### Smart Daily Energy Manager
 
 A personalized agent that optimizes daily energy levels by recommending activities and rest periods to enhance productivity and well-being.

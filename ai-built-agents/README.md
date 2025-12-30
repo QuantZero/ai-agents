@@ -14,6 +14,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Grocery Saver
+
+Optimizes grocery shopping and budgeting to reduce waste and save money for everyday families.
+
+**Category:** lifestyle
+
+**Date:** 2025-12-30
+
+[📖 Read the Smart Grocery Saver README](./2025-12-30-smart-grocery-saver/README.md)
+
 ### Smart Daily Energy Manager
 
 A personalized agent that optimizes daily energy levels by recommending activities and rest periods to enhance productivity and well-being.
