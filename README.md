@@ -21,6 +21,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Home Security Advisor
+
+An AI agent that proactively advises homeowners to enhance their home security, reducing risks of burglaries and intrusions.
+
+**Category:** safety
+
+**Date:** 2025-12-31
+
+[📖 Read the Smart Home Security Advisor README](./ai-built-agents/2025-12-31-smart-home-security-advisor/README.md)
+
 ### Smart Grocery Saver
 
 Optimizes grocery shopping and budgeting to reduce waste and save money for everyday families.
