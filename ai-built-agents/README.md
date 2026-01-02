@@ -16,6 +16,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Career Pathfinder
+
+Guides individuals in identifying and pursuing optimal career paths based on skills, interests, and market trends.
+
+**Category:** career
+
+**Date:** 2026-01-02
+
+[📖 Read the Smart Career Pathfinder README](./2026-01-02-smart-career-pathfinder/README.md)
+
 ### Smart Home Security Advisor
 
 An AI agent that proactively advises homeowners to enhance their home security, reducing risks of burglaries and intrusions.

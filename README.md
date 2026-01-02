@@ -22,6 +22,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Career Pathfinder
+
+Guides individuals in identifying and pursuing optimal career paths based on skills, interests, and market trends.
+
+**Category:** career
+
+**Date:** 2026-01-02
+
+[📖 Read the Smart Career Pathfinder README](./ai-built-agents/2026-01-02-smart-career-pathfinder/README.md)
+
 ### Smart Home Security Advisor
 
 An AI agent that proactively advises homeowners to enhance their home security, reducing risks of burglaries and intrusions.
