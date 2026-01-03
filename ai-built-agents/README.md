@@ -17,6 +17,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Social Scheduler
+
+Seamlessly organizes social gatherings, making it easy for everyday people to connect and maintain relationships.
+
+**Category:** communication
+
+**Date:** 2026-01-03
+
+[📖 Read the Smart Social Scheduler README](./2026-01-03-smart-social-scheduler/README.md)
+
 ### Smart Career Pathfinder
 
 Guides individuals in identifying and pursuing optimal career paths based on skills, interests, and market trends.
