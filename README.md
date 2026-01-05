@@ -24,6 +24,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Daily Meal Optimizer
+
+Effortlessly plan nutritious and budget-friendly meals tailored to your dietary needs and preferences.
+
+**Category:** lifestyle
+
+**Date:** 2026-01-05
+
+[📖 Read the Smart Daily Meal Optimizer README](./ai-built-agents/2026-01-05-smart-daily-meal-optimizer/README.md)
+
 ### Smart Social Scheduler
 
 Seamlessly organizes social gatherings, making it easy for everyday people to connect and maintain relationships.

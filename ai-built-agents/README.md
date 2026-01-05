@@ -18,6 +18,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Daily Meal Optimizer
+
+Effortlessly plan nutritious and budget-friendly meals tailored to your dietary needs and preferences.
+
+**Category:** lifestyle
+
+**Date:** 2026-01-05
+
+[📖 Read the Smart Daily Meal Optimizer README](./2026-01-05-smart-daily-meal-optimizer/README.md)
+
 ### Smart Social Scheduler
 
 Seamlessly organizes social gatherings, making it easy for everyday people to connect and maintain relationships.
