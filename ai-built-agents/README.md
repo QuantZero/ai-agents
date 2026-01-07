@@ -20,6 +20,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Sleep Quality Enhancer
+
+An AI agent that optimizes your sleep environment and routines for better rest and recovery.
+
+**Category:** health
+
+**Date:** 2026-01-07
+
+[📖 Read the Smart Sleep Quality Enhancer README](./2026-01-07-smart-sleep-quality-enhancer/README.md)
+
 ### Smart Daily Commute Optimizer
 
 Optimizes daily commute by providing real-time updates and alternative routes to save time and reduce stress.
