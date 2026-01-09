@@ -21,6 +21,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Job Application Tracker
+
+Streamline your job search with a dynamic agent that organizes, tracks, and optimizes your application process.
+
+**Category:** career
+
+**Date:** 2026-01-09
+
+[📖 Read the Smart Job Application Tracker README](./2026-01-09-smart-job-application-tracker/README.md)
+
 ### Smart Sleep Quality Enhancer
 
 An AI agent that optimizes your sleep environment and routines for better rest and recovery.
