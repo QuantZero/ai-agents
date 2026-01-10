@@ -22,6 +22,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Home Maintenance Scheduler
+
+Effortlessly manage and schedule home maintenance tasks to keep your living space in top condition.
+
+**Category:** lifestyle
+
+**Date:** 2026-01-10
+
+[📖 Read the Smart Home Maintenance Scheduler README](./2026-01-10-smart-home-maintenance-scheduler/README.md)
+
 ### Smart Job Application Tracker
 
 Streamline your job search with a dynamic agent that organizes, tracks, and optimizes your application process.

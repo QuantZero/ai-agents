@@ -28,6 +28,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Home Maintenance Scheduler
+
+Effortlessly manage and schedule home maintenance tasks to keep your living space in top condition.
+
+**Category:** lifestyle
+
+**Date:** 2026-01-10
+
+[📖 Read the Smart Home Maintenance Scheduler README](./ai-built-agents/2026-01-10-smart-home-maintenance-scheduler/README.md)
+
 ### Smart Job Application Tracker
 
 Streamline your job search with a dynamic agent that organizes, tracks, and optimizes your application process.
