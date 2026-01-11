@@ -23,6 +23,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Daily Time Optimizer
+
+An AI agent to intelligently structure your day for maximum productivity and balance.
+
+**Category:** productivity
+
+**Date:** 2026-01-11
+
+[📖 Read the Smart Daily Time Optimizer README](./2026-01-11-smart-daily-time-optimizer/README.md)
+
 ### Smart Home Maintenance Scheduler
 
 Effortlessly manage and schedule home maintenance tasks to keep your living space in top condition.
