@@ -30,6 +30,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Digital Declutterer
+
+Effortlessly organize and optimize digital files and emails to reduce stress and save time.
+
+**Category:** productivity
+
+**Date:** 2026-01-12
+
+[📖 Read the Smart Digital Declutterer README](./ai-built-agents/2026-01-12-smart-digital-declutterer/README.md)
+
 ### Smart Daily Time Optimizer
 
 An AI agent to intelligently structure your day for maximum productivity and balance.
