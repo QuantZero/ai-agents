@@ -25,6 +25,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Nutrition Advisor
+
+Personalized nutrition guidance for healthier eating habits.
+
+**Category:** health
+
+**Date:** 2026-01-13
+
+[📖 Read the Smart Nutrition Advisor README](./2026-01-13-smart-nutrition-advisor/README.md)
+
 ### Smart Digital Declutterer
 
 Effortlessly organize and optimize digital files and emails to reduce stress and save time.
