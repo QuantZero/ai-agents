@@ -26,6 +26,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Home Energy Optimizer
+
+An AI agent that automatically optimizes home energy usage to save money and reduce environmental impact.
+
+**Category:** lifestyle
+
+**Date:** 2026-01-14
+
+[📖 Read the Smart Home Energy Optimizer README](./2026-01-14-smart-home-energy-optimizer/README.md)
+
 ### Smart Nutrition Advisor
 
 Personalized nutrition guidance for healthier eating habits.
