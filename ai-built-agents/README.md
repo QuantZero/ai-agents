@@ -27,6 +27,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Disaster Preparedness Planner
+
+An AI agent that helps families and individuals prepare for natural disasters by creating customized readiness plans.
+
+**Category:** safety
+
+**Date:** 2026-01-15
+
+[📖 Read the Smart Disaster Preparedness Planner README](./2026-01-15-smart-disaster-preparedness-planner/README.md)
+
 ### Smart Home Energy Optimizer
 
 An AI agent that automatically optimizes home energy usage to save money and reduce environmental impact.

@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "smart-disaster-preparedness-planner"
+version = "0.1.0"
+description = "An AI agent that helps prepare for disasters based on location."
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = ">=2.9.0"
+langgraph = ">=0.2.0"
+langchain-openai = ">=0.2.0"
+geopy = "^2.3.0"
+python-dotenv = ">=1.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
