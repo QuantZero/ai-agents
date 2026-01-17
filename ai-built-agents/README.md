@@ -28,6 +28,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Mental Health Check-In
+
+An AI agent that provides personalized mental health check-ins to help individuals manage stress and emotions daily.
+
+**Category:** wellbeing
+
+**Date:** 2026-01-17
+
+[📖 Read the Smart Mental Health Check-In README](./2026-01-17-smart-mental-health-check-in/README.md)
+
 ### Smart Disaster Preparedness Planner
 
 An AI agent that helps families and individuals prepare for natural disasters by creating customized readiness plans.
