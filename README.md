@@ -35,6 +35,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Daily Expense Optimizer
+
+Empowers users to optimize daily spending and achieve financial goals with ease.
+
+**Category:** finance
+
+**Date:** 2026-01-18
+
+[📖 Read the Smart Daily Expense Optimizer README](./ai-built-agents/2026-01-18-smart-daily-expense-optimizer/README.md)
+
 ### Smart Mental Health Check-In
 
 An AI agent that provides personalized mental health check-ins to help individuals manage stress and emotions daily.

@@ -29,6 +29,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Daily Expense Optimizer
+
+Empowers users to optimize daily spending and achieve financial goals with ease.
+
+**Category:** finance
+
+**Date:** 2026-01-18
+
+[📖 Read the Smart Daily Expense Optimizer README](./2026-01-18-smart-daily-expense-optimizer/README.md)
+
 ### Smart Mental Health Check-In
 
 An AI agent that provides personalized mental health check-ins to help individuals manage stress and emotions daily.
