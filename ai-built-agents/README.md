@@ -30,6 +30,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Personal Safety Advisor
+
+An AI agent that helps individuals stay safe by providing real-time safety alerts and guidance based on their location and context.
+
+**Category:** safety
+
+**Date:** 2026-01-19
+
+[📖 Read the Smart Personal Safety Advisor README](./2026-01-19-smart-personal-safety-advisor/README.md)
+
 ### Smart Daily Expense Optimizer
 
 Empowers users to optimize daily spending and achieve financial goals with ease.
