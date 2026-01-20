@@ -24,6 +24,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Home Energy Saver
+
+An intelligent agent that optimizes home energy usage to reduce costs and environmental impact for everyday households.
+
+**Category:** lifestyle
+
+**Date:** 2026-01-20
+
+[📖 Read the Smart Home Energy Saver README](./ai-built-agents/2026-01-20-smart-home-energy-saver/README.md)
+
 ### Smart Personal Safety Advisor
 
 An AI agent that helps individuals stay safe by providing real-time safety alerts and guidance based on their location and context.

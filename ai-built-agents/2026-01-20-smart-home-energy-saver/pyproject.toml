@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "smart-home-energy-saver"
+version = "0.1.0"
+description = "An AI agent to help homeowners and renters reduce energy costs and minimize their carbon footprint."
+authors = ["Agent Foundry <agent@foundry.ai>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = "^2.9.0"
+langgraph = "^0.2.0"
+langchain-openai = "^0.2.0"
+python-dotenv = "^1.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
