@@ -8,20 +8,7 @@ This repository contains independent AI agent projects, each with its own purpos
 
 ## Available Agents
 
-### AI-Built Agents
-
 See the [ai-built-agents README](./ai-built-agents/README.md) for the complete list.
-
-### Human-Built Agents
-
-[📖 Read the Dependency Conflict Resolver README](./ai-built-agents/2025-12-26-dependency-conflict-resolver/README.md)
-
-
-
-
-
-
-
 
 
 
