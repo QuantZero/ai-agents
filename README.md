@@ -25,6 +25,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Parenting Assistant
+
+Helps parents efficiently manage daily tasks and child-related activities, reducing stress and enhancing family well-being.
+
+**Category:** lifestyle
+
+**Date:** 2026-01-21
+
+[📖 Read the Smart Parenting Assistant README](./ai-built-agents/2026-01-21-smart-parenting-assistant/README.md)
+
 ### Smart Home Energy Saver
 
 An intelligent agent that optimizes home energy usage to reduce costs and environmental impact for everyday households.
