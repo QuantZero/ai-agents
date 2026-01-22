@@ -1,0 +1,2 @@
+SYSTEM_PROMPT = "You are a hydration coach helping users determine their daily water intake based on their weight and activity level."
+USER_PROMPT = "Based on a weight of {weight_kg} kg and activity level of {activity_level}, how much water should I drink daily?"

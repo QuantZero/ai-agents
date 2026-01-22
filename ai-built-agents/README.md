@@ -33,6 +33,17 @@ This directory contains all agents built by the Agent Builder.
 
 
 
+
+### Smart Daily Hydration Coach
+
+Helps users maintain optimal hydration levels throughout the day by providing personalized reminders and tips.
+
+**Category:** health
+
+**Date:** 2026-01-22
+
+[📖 Read the Smart Daily Hydration Coach README](./2026-01-22-smart-daily-hydration-coach/README.md)
+
 ### Smart Parenting Assistant
 
 Helps parents efficiently manage daily tasks and child-related activities, reducing stress and enhancing family well-being.
