@@ -27,6 +27,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Daily Task Prioritizer
+
+An AI agent that dynamically prioritizes daily tasks based on urgency, importance, and user preferences, helping millions stay organized and stress-free.
+
+**Category:** productivity
+
+**Date:** 2026-01-23
+
+[📖 Read the Smart Daily Task Prioritizer README](./ai-built-agents/2026-01-23-smart-daily-task-prioritizer/README.md)
+
 ### Smart Daily Hydration Coach
 
 Helps users maintain optimal hydration levels throughout the day by providing personalized reminders and tips.
