@@ -28,6 +28,17 @@ See the [ai-built-agents README](./ai-built-agents/README.md) for the complete l
 
 
 
+
+### Smart Daily Task Scheduler
+
+Effortlessly organize and prioritize your daily tasks to boost productivity and reduce stress.
+
+**Category:** productivity
+
+**Date:** 2026-01-25
+
+[📖 Read the Smart Daily Task Scheduler README](./ai-built-agents/2026-01-25-smart-daily-task-scheduler/README.md)
+
 ### Smart Daily Task Prioritizer
 
 An AI agent that dynamically prioritizes daily tasks based on urgency, importance, and user preferences, helping millions stay organized and stress-free.
