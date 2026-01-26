@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "daily-time-optimizer"
+version = "0.1.0"
+description = "An agent that optimizes daily schedules for better time management."
+authors = ["Agent Foundry"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pydantic = ">=2.9.0"
+langgraph = ">=0.2.0"
+langchain-openai = ">=0.2.0"
+python-dotenv = ">=1.2.1"
+fastapi = "^0.70.0"
+uvicorn = "^0.15.0"
+apscheduler = "^3.7.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

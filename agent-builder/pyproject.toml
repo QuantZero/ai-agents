@@ -1,0 +1,15 @@
+[project]
+name = "agent-builder"
+version = "2.0.0"
+description = "Autonomous AI engineer that builds comprehensive, production-ready full-stack applications"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.9.0",
+    "langgraph>=0.2.0",
+    "langchain-openai>=0.2.0",
+    "langchain-core>=0.3.0",
+    "python-dotenv>=1.2.1",
+    "schedule>=1.2.0",
+]
+

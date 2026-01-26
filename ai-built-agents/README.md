@@ -36,7 +36,7 @@ This directory contains all agents built by the Agent Builder.
 
 
 
-### Smart Daily Task Scheduler
+### Daily Task Scheduler
 
 Effortlessly organize and prioritize your daily tasks to boost productivity and reduce stress.
 
@@ -44,9 +44,9 @@ Effortlessly organize and prioritize your daily tasks to boost productivity and 
 
 **Date:** 2026-01-25
 
-[📖 Read the Smart Daily Task Scheduler README](./2026-01-25-smart-daily-task-scheduler/README.md)
+[📖 Read the Daily Task Scheduler README](./2026-01-25-daily-task-scheduler/README.md)
 
-### Smart Daily Task Prioritizer
+### Daily Task Prioritizer
 
 An AI agent that dynamically prioritizes daily tasks based on urgency, importance, and user preferences, helping millions stay organized and stress-free.
 
@@ -54,9 +54,9 @@ An AI agent that dynamically prioritizes daily tasks based on urgency, importanc
 
 **Date:** 2026-01-23
 
-[📖 Read the Smart Daily Task Prioritizer README](./2026-01-23-smart-daily-task-prioritizer/README.md)
+[📖 Read the Daily Task Prioritizer README](./2026-01-23-daily-task-prioritizer/README.md)
 
-### Smart Daily Hydration Coach
+### Daily Hydration Coach
 
 Helps users maintain optimal hydration levels throughout the day by providing personalized reminders and tips.
 
@@ -64,9 +64,9 @@ Helps users maintain optimal hydration levels throughout the day by providing pe
 
 **Date:** 2026-01-22
 
-[📖 Read the Smart Daily Hydration Coach README](./2026-01-22-smart-daily-hydration-coach/README.md)
+[📖 Read the Daily Hydration Coach README](./2026-01-22-daily-hydration-coach/README.md)
 
-### Smart Parenting Assistant
+### Parenting Assistant
 
 Helps parents efficiently manage daily tasks and child-related activities, reducing stress and enhancing family well-being.
 
@@ -74,9 +74,9 @@ Helps parents efficiently manage daily tasks and child-related activities, reduc
 
 **Date:** 2026-01-21
 
-[📖 Read the Smart Parenting Assistant README](./2026-01-21-smart-parenting-assistant/README.md)
+[📖 Read the Parenting Assistant README](./2026-01-21-parenting-assistant/README.md)
 
-### Smart Home Energy Saver
+### Home Energy Saver
 
 An intelligent agent that optimizes home energy usage to reduce costs and environmental impact for everyday households.
 
@@ -84,9 +84,9 @@ An intelligent agent that optimizes home energy usage to reduce costs and enviro
 
 **Date:** 2026-01-20
 
-[📖 Read the Smart Home Energy Saver README](./2026-01-20-smart-home-energy-saver/README.md)
+[📖 Read the Home Energy Saver README](./2026-01-20-home-energy-saver/README.md)
 
-### Smart Personal Safety Advisor
+### Personal Safety Advisor
 
 An AI agent that helps individuals stay safe by providing real-time safety alerts and guidance based on their location and context.
 
@@ -94,9 +94,9 @@ An AI agent that helps individuals stay safe by providing real-time safety alert
 
 **Date:** 2026-01-19
 
-[📖 Read the Smart Personal Safety Advisor README](./2026-01-19-smart-personal-safety-advisor/README.md)
+[📖 Read the Personal Safety Advisor README](./2026-01-19-personal-safety-advisor/README.md)
 
-### Smart Daily Expense Optimizer
+### Daily Expense Optimizer
 
 Empowers users to optimize daily spending and achieve financial goals with ease.
 
@@ -104,9 +104,9 @@ Empowers users to optimize daily spending and achieve financial goals with ease.
 
 **Date:** 2026-01-18
 
-[📖 Read the Smart Daily Expense Optimizer README](./2026-01-18-smart-daily-expense-optimizer/README.md)
+[📖 Read the Daily Expense Optimizer README](./2026-01-18-daily-expense-optimizer/README.md)
 
-### Smart Mental Health Check-In
+### Mental Health Check-In
 
 An AI agent that provides personalized mental health check-ins to help individuals manage stress and emotions daily.
 
@@ -114,9 +114,9 @@ An AI agent that provides personalized mental health check-ins to help individua
 
 **Date:** 2026-01-17
 
-[📖 Read the Smart Mental Health Check-In README](./2026-01-17-smart-mental-health-check-in/README.md)
+[📖 Read the Mental Health Check-In README](./2026-01-17-mental-health-check-in/README.md)
 
-### Smart Disaster Preparedness Planner
+### Disaster Preparedness Planner
 
 An AI agent that helps families and individuals prepare for natural disasters by creating customized readiness plans.
 
@@ -124,9 +124,9 @@ An AI agent that helps families and individuals prepare for natural disasters by
 
 **Date:** 2026-01-15
 
-[📖 Read the Smart Disaster Preparedness Planner README](./2026-01-15-smart-disaster-preparedness-planner/README.md)
+[📖 Read the Disaster Preparedness Planner README](./2026-01-15-disaster-preparedness-planner/README.md)
 
-### Smart Home Energy Optimizer
+### Home Energy Optimizer
 
 An AI agent that automatically optimizes home energy usage to save money and reduce environmental impact.
 
@@ -134,9 +134,9 @@ An AI agent that automatically optimizes home energy usage to save money and red
 
 **Date:** 2026-01-14
 
-[📖 Read the Smart Home Energy Optimizer README](./2026-01-14-smart-home-energy-optimizer/README.md)
+[📖 Read the Home Energy Optimizer README](./2026-01-14-home-energy-optimizer/README.md)
 
-### Smart Nutrition Advisor
+### Nutrition Advisor
 
 Personalized nutrition guidance for healthier eating habits.
 
@@ -144,9 +144,9 @@ Personalized nutrition guidance for healthier eating habits.
 
 **Date:** 2026-01-13
 
-[📖 Read the Smart Nutrition Advisor README](./2026-01-13-smart-nutrition-advisor/README.md)
+[📖 Read the Nutrition Advisor README](./2026-01-13-nutrition-advisor/README.md)
 
-### Smart Digital Declutterer
+### Digital Declutterer
 
 Effortlessly organize and optimize digital files and emails to reduce stress and save time.
 
@@ -154,9 +154,9 @@ Effortlessly organize and optimize digital files and emails to reduce stress and
 
 **Date:** 2026-01-12
 
-[📖 Read the Smart Digital Declutterer README](./2026-01-12-smart-digital-declutterer/README.md)
+[📖 Read the Digital Declutterer README](./2026-01-12-digital-declutterer/README.md)
 
-### Smart Daily Time Optimizer
+### Daily Time Optimizer
 
 An AI agent to intelligently structure your day for maximum productivity and balance.
 
@@ -164,9 +164,9 @@ An AI agent to intelligently structure your day for maximum productivity and bal
 
 **Date:** 2026-01-11
 
-[📖 Read the Smart Daily Time Optimizer README](./2026-01-11-smart-daily-time-optimizer/README.md)
+[📖 Read the Daily Time Optimizer README](./2026-01-11-daily-time-optimizer/README.md)
 
-### Smart Home Maintenance Scheduler
+### Home Maintenance Scheduler
 
 Effortlessly manage and schedule home maintenance tasks to keep your living space in top condition.
 
@@ -174,9 +174,9 @@ Effortlessly manage and schedule home maintenance tasks to keep your living spac
 
 **Date:** 2026-01-10
 
-[📖 Read the Smart Home Maintenance Scheduler README](./2026-01-10-smart-home-maintenance-scheduler/README.md)
+[📖 Read the Home Maintenance Scheduler README](./2026-01-10-home-maintenance-scheduler/README.md)
 
-### Smart Job Application Tracker
+### Job Application Tracker
 
 Streamline your job search with a dynamic agent that organizes, tracks, and optimizes your application process.
 
@@ -184,9 +184,9 @@ Streamline your job search with a dynamic agent that organizes, tracks, and opti
 
 **Date:** 2026-01-09
 
-[📖 Read the Smart Job Application Tracker README](./2026-01-09-smart-job-application-tracker/README.md)
+[📖 Read the Job Application Tracker README](./2026-01-09-job-application-tracker/README.md)
 
-### Smart Sleep Quality Enhancer
+### Sleep Quality Enhancer
 
 An AI agent that optimizes your sleep environment and routines for better rest and recovery.
 
@@ -194,9 +194,9 @@ An AI agent that optimizes your sleep environment and routines for better rest a
 
 **Date:** 2026-01-07
 
-[📖 Read the Smart Sleep Quality Enhancer README](./2026-01-07-smart-sleep-quality-enhancer/README.md)
+[📖 Read the Sleep Quality Enhancer README](./2026-01-07-sleep-quality-enhancer/README.md)
 
-### Smart Daily Commute Optimizer
+### Daily Commute Optimizer
 
 Optimizes daily commute by providing real-time updates and alternative routes to save time and reduce stress.
 
@@ -204,9 +204,9 @@ Optimizes daily commute by providing real-time updates and alternative routes to
 
 **Date:** 2026-01-06
 
-[📖 Read the Smart Daily Commute Optimizer README](./2026-01-06-smart-daily-commute-optimizer/README.md)
+[📖 Read the Daily Commute Optimizer README](./2026-01-06-daily-commute-optimizer/README.md)
 
-### Smart Daily Meal Optimizer
+### Daily Meal Optimizer
 
 Effortlessly plan nutritious and budget-friendly meals tailored to your dietary needs and preferences.
 
@@ -214,9 +214,9 @@ Effortlessly plan nutritious and budget-friendly meals tailored to your dietary 
 
 **Date:** 2026-01-05
 
-[📖 Read the Smart Daily Meal Optimizer README](./2026-01-05-smart-daily-meal-optimizer/README.md)
+[📖 Read the Daily Meal Optimizer README](./2026-01-05-daily-meal-optimizer/README.md)
 
-### Smart Social Scheduler
+### Social Scheduler
 
 Seamlessly organizes social gatherings, making it easy for everyday people to connect and maintain relationships.
 
@@ -224,9 +224,9 @@ Seamlessly organizes social gatherings, making it easy for everyday people to co
 
 **Date:** 2026-01-03
 
-[📖 Read the Smart Social Scheduler README](./2026-01-03-smart-social-scheduler/README.md)
+[📖 Read the Social Scheduler README](./2026-01-03-social-scheduler/README.md)
 
-### Smart Career Pathfinder
+### Career Pathfinder
 
 Guides individuals in identifying and pursuing optimal career paths based on skills, interests, and market trends.
 
@@ -234,9 +234,9 @@ Guides individuals in identifying and pursuing optimal career paths based on ski
 
 **Date:** 2026-01-02
 
-[📖 Read the Smart Career Pathfinder README](./2026-01-02-smart-career-pathfinder/README.md)
+[📖 Read the Career Pathfinder README](./2026-01-02-career-pathfinder/README.md)
 
-### Smart Home Security Advisor
+### Home Security Advisor
 
 An AI agent that proactively advises homeowners to enhance their home security, reducing risks of burglaries and intrusions.
 
@@ -244,9 +244,9 @@ An AI agent that proactively advises homeowners to enhance their home security, 
 
 **Date:** 2025-12-31
 
-[📖 Read the Smart Home Security Advisor README](./2025-12-31-smart-home-security-advisor/README.md)
+[📖 Read the Home Security Advisor README](./2025-12-31-home-security-advisor/README.md)
 
-### Smart Grocery Saver
+### Grocery Saver
 
 Optimizes grocery shopping and budgeting to reduce waste and save money for everyday families.
 
@@ -254,9 +254,9 @@ Optimizes grocery shopping and budgeting to reduce waste and save money for ever
 
 **Date:** 2025-12-30
 
-[📖 Read the Smart Grocery Saver README](./2025-12-30-smart-grocery-saver/README.md)
+[📖 Read the Grocery Saver README](./2025-12-30-grocery-saver/README.md)
 
-### Smart Daily Energy Manager
+### Daily Energy Manager
 
 A personalized agent that optimizes daily energy levels by recommending activities and rest periods to enhance productivity and well-being.
 
@@ -264,9 +264,9 @@ A personalized agent that optimizes daily energy levels by recommending activiti
 
 **Date:** 2025-12-29
 
-[📖 Read the Smart Daily Energy Manager README](./2025-12-29-smart-daily-energy-manager/README.md)
+[📖 Read the Daily Energy Manager README](./2025-12-29-daily-energy-manager/README.md)
 
-### Smart Exercise Companion
+### Exercise Companion
 
 An adaptive agent that personalizes and optimizes exercise routines for everyday individuals to improve fitness and well-being.
 
@@ -274,19 +274,19 @@ An adaptive agent that personalizes and optimizes exercise routines for everyday
 
 **Date:** 2025-12-28
 
-[📖 Read the Smart Exercise Companion README](./2025-12-28-smart-exercise-companion/README.md)
+[📖 Read the Exercise Companion README](./2025-12-28-exercise-companion/README.md)
 
-### Smart Medication Manager
+### Medication Manager
 
-A smart assistant that ensures you never miss a dose and keeps track of medication schedules effortlessly.
+An assistant that ensures you never miss a dose and keeps track of medication schedules effortlessly.
 
 **Category:** health
 
 **Date:** 2025-12-26
 
-[📖 Read the Smart Medication Manager README](./2025-12-26-smart-medication-manager/README.md)
+[📖 Read the Medication Manager README](./2025-12-26-medication-manager/README.md)
 
-### Smart Bill Tracker
+### Bill Tracker
 
 Effortlessly manage and track all your bills to avoid late fees and stress.
 
@@ -294,7 +294,7 @@ Effortlessly manage and track all your bills to avoid late fees and stress.
 
 **Date:** 2025-12-26
 
-[📖 Read the Smart Bill Tracker README](./2025-12-26-smart-bill-tracker/README.md)
+[📖 Read the Bill Tracker README](./2025-12-26-bill-tracker/README.md)
 
 ### Sleep Optimizer
 
@@ -306,7 +306,7 @@ Helps millions improve sleep quality by analyzing patterns and suggesting person
 
 [📖 Read the Sleep Optimizer README](./2025-12-26-sleep-optimizer/README.md)
 
-### Smart Habit Builder
+### Habit Builder
 
 An AI agent that helps people build and sustain healthy habits effortlessly.
 
@@ -314,7 +314,7 @@ An AI agent that helps people build and sustain healthy habits effortlessly.
 
 **Date:** 2025-12-26
 
-[📖 Read the Smart Habit Builder README](./2025-12-26-smart-habit-builder/README.md)
+[📖 Read the Habit Builder README](./2025-12-26-habit-builder/README.md)
 
 ### Daily Focus Enhancer
 
@@ -336,7 +336,7 @@ An AI agent that helps individuals identify stress triggers and suggests persona
 
 [📖 Read the Daily Stress Manager README](./2025-12-26-daily-stress-manager/README.md)
 
-### Smart Budget Buddy
+### Budget Buddy
 
 An intelligent budgeting assistant that helps individuals manage their personal finances effortlessly.
 
@@ -344,4 +344,4 @@ An intelligent budgeting assistant that helps individuals manage their personal 
 
 **Date:** 2025-12-26
 
-[📖 Read the Smart Budget Buddy README](./2025-12-26-smart-budget-buddy/README.md)
+[📖 Read the Budget Buddy README](./2025-12-26-budget-buddy/README.md)

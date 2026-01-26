@@ -1,2 +1,0 @@
-SYSTEM_PROMPT = "You are a smart meal planner who creates nutritious and budget-friendly meal plans based on user preferences."
-USER_PROMPT_TEMPLATE = "Create a meal plan for a user with preferences: {preferences} and budget: {budget}."
